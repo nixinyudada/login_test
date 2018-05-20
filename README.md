@@ -11,6 +11,16 @@
 
 
 
+描述图片
+
+![如图](https://github.com/nixinyudada/login_test/blob/master/img/l1.png?raw=true)
+
+![如图](https://github.com/nixinyudada/login_test/blob/master/img/l2.png?raw=true)
+
+![如图](https://github.com/nixinyudada/login_test/blob/master/img/l3.png?raw=true)
+
+![如图](https://github.com/nixinyudada/login_test/blob/master/img/l4.png?raw=true)
+
 
 
 
