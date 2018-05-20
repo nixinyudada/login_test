@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        .page_top{
+            width: 100%;
+            height: 60px;
+            background: cornflowerblue;
+            margin: 0 auto;
+        }
+        .page_top > button{
+            width: 100px;
+            height: 30px;
+            margin: 15px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page_top">
+    <button id="login_box">登陆</button>
+    <button id="register_box">注册</button>
+</div>
+
+<div id="loginBox">
+    <div id="content">
+        <div class="inputBox">
+            <div class="contentBox">
+                <p><b>用户名:</b><input type="text" id="username" placeholder="用户名"><span style="position: relative;"><span id="username_tips" onclick="sh('username_tips','username_tips_word')"></span><span id="username_tips_word"></span></span></p>
+                <p><b>密码:</b><input type="password" id="password" placeholder="密码"><span style="position: relative;"><span id="password_tips" onclick="sh('password_tips','password_tips_word')"></span><span id="password_tips_word"></span></span></p>
+                <p><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<img id="verification_img" src="img/1.png" style="width: 45%;height: 30px;" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:" id="next_img">换一张</a></p>
+                <p><b>验证码:</b><input type="text" id="verification_code" placeholder="验证码"><span style="position: relative;"><span id="verification_code_tips" onclick="sh('verification_code_tips','verification_code_tips_word')"></span><span id="verification_code_tips_word"></span></span></p>
+                <br>
+                <button id="login">登陆</button>
+                <button id="register">注册</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js-lib/DragBox.js"></script>
+<script src="js-lib/typing.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+<script src="js-lib/login_ifyInput.js"></script>
+<script src="js/login.js"></script>
+<script>
+    // 文字显示隐藏
+    function sh(id,showId){
+        var showId = document.getElementById(showId)
+        showId.style.visibility == "hidden"?showId.style.visibility = "visible":showId.style.visibility = "hidden"
+    }
+
+
+
+</script>
+</body>
+</html>
