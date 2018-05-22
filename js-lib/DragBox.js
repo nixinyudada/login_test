@@ -78,8 +78,8 @@ function DragBox(obj){
             if(boxX < 0){
                 boxX = 0;
             }
-            if(boxY < 0){
-                boxY = 0
+            if(boxY < 60){  // 导航栏 60 px
+                boxY = 60
             }
 
             // 控制移动范围 右下角
