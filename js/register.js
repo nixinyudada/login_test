@@ -1,29 +1,13 @@
 window.onload = function(){
-
-    // 注册内容
-    var register_input = `<div class="inputBox">
-            <div class="contentBox">
-                <p><b>姓名:</b><input type="text" id="user" placeholder="姓名"><span style="position: relative;"><span id="user_tips" onclick="sh('user_tips','user_tips_word')"></span><span id="user_tips_word">123</span></span></p>
-                <p><b>用户名:</b><input type="text" id="username" placeholder="用户名"><span style="position: relative;"><span id="username_tips" onclick="sh('username_tips','username_tips_word')"></span><span id="username_tips_word"></span></span></p>
-                <p><b>密码:</b><input type="password" id="password" placeholder="密码"><span style="position: relative;"><span id="password_tips" onclick="sh('password_tips','password_tips_word')"></span><span id="password_tips_word"></span></span></p>
-                <p><b>密码:</b><input type="password" id="repassword" placeholder="确认密码"><span style="position: relative;"><span id="repassword_tips" onclick="sh('repassword_tips','repassword_tips_word')"></span><span id="repassword_tips_word"></span></span></p>
-                <p><b>邮箱:</b><input type="text" id="e_mail" placeholder="邮箱"><span style="position: relative;"><span id="e_mail_tips" onclick="sh('e_mail_tips','e_mail_tips_word')"></span><span id="e_mail_tips_word"></span></span></p>
-                <p><b>手机号:</b><input type="text" id="phonenumber" placeholder="手机号码"><span style="position: relative;"><span id="phonenumber_tips" onclick="sh('phonenumber_tips','phonenumber_tips_word')"></span><span id="phonenumber_tips_word"></span></span></p>
-                <br>
-                <button id="register">注册</button>
-                <button id="login.html">登陆</button>
-            </div>
-        </div>`;
-
-    var register_tips = `<br /><br /><br /><br /><h1>欢迎注册</h1><br/>
+    /*var register_tips = `<br /><br /><br /><br /><h1>欢迎注册</h1><br/>
                     <button id="continue">下一步</button>
-                `;
-    typing({
+                `;*/
+    /*typing({
         "Tipstext":register_tips,
         "ContainerId":"content",
         "speed":30
 
-    })
+    })*/
     DragBox({
         "width":500,
         "height":500,
@@ -32,7 +16,7 @@ window.onload = function(){
         "showBox":"register_box"
     });
     // 下一步显示 注册表单
-    if(document.getElementById("continue") == null){
+    /*if(document.getElementById("continue") == null){
         document.getElementById("registerBox").onmouseover = function(){
             if(document.getElementById("continue") != null){
                 document.getElementById("continue").onclick = function(){
@@ -46,7 +30,7 @@ window.onload = function(){
 
 
         }
-    }
+    }*/
 
 
     document.onmouseover = function(){

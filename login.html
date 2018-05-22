@@ -21,8 +21,8 @@
 <body>
 
 <div class="page_top">
-    <button id="login_box">登陆</button>
-    <button id="register_box">注册</button>
+    <button class="login" id="login_box">登陆</button>
+    <button class="register" onclick="javascript:location.href='register.html'">注册</button>
 </div>
 
 <div id="loginBox">
@@ -34,13 +34,13 @@
                 <p><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<img id="verification_img" src="img/1.png" style="width: 45%;height: 30px;" alt="">&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:" id="next_img">换一张</a></p>
                 <p><b>验证码:</b><input type="text" id="verification_code" placeholder="验证码"><span style="position: relative;"><span id="verification_code_tips" onclick="sh('verification_code_tips','verification_code_tips_word')"></span><span id="verification_code_tips_word"></span></span></p>
                 <br>
-                <button id="login">登陆</button>
-                <button id="register">注册</button>
+                <button id="login" class="login">登陆</button>
+                <button class="register" onclick="javascript:location.href='register.html'">注册</button>
             </div>
         </div>
     </div>
 </div>
-
+<div id="loadDiv"></div>
 <script src="js-lib/DragBox.js"></script>
 <script src="js-lib/typing.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
@@ -52,8 +52,6 @@
         var showId = document.getElementById(showId)
         showId.style.visibility == "hidden"?showId.style.visibility = "visible":showId.style.visibility = "hidden"
     }
-
-
 
 </script>
 </body>
