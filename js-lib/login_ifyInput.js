@@ -106,17 +106,17 @@ function login_ifyInput(verCode){
         "isU":true,
         "isV":true
     }
-    username.onmouseout = function(){
+    username.onchange = function(){
         bool = o.uFunc()
         o.isU = bool
         }
 
-    verification_code.onmouseout = function(){
+    verification_code.onchange = function(){
         bool = o.vFunc(verCode)
         o.isV = bool
     }
 
-    password.onmouseout = function(){
+    password.onchange = function(){
         if(password.value == "" || password.value == null){
             password_tips.style.background = "red"
             password_tips_word.innerHTML = "密码不能为空！"
@@ -128,12 +128,12 @@ function login_ifyInput(verCode){
     }
 
 
-    username.onblur = function(){
+    username.onchange = function(){
         bool = o.uFunc()
         o.isU = bool
     }
 
-    verification_code.onblur = function(){
+    verification_code.onchange = function(){
         bool = o.vFunc(verCode)
         o.isV = bool
     }

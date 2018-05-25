@@ -23,12 +23,9 @@ function register_ifyInput(){
     var e_mail_tips_word = document.getElementById("e_mail_tips_word")
     var phonenumber_tips_word = document.getElementById("phonenumber_tips_word")
 
-// 事件按钮
-    var loginBtn = document.getElementById("login")
-    var register = document.getElementById("register")
 
-    var n = function(){
-        var user_val = user.value;
+    var ifyN = function(){
+        var user_val = user.value.replace(/\s/g,"");
         if(user_val == null || user_val == ""){
             //alert("输入不能为空！")
             user_tips.style.background = "red"
@@ -36,7 +33,7 @@ function register_ifyInput(){
             return false;
         }else if(user_val.length < 2 || user_val.length > 6){
             // alert("长度请保持在2~6之间")
-            user_tips.innerHTML = "×"
+            user_tips.style.background = "red"
             user_tips_word.innerHTML = "长度请保持在2~6之间"
             return false;
         }else{
@@ -46,10 +43,10 @@ function register_ifyInput(){
         return true;
     }
     /****************************************************************************************/
-    var u = function(){
+    var ifyU = function(){
         // 匹配数字及特殊字符的正则表达式
         var username_code = /[a-zA-Z][a-zA-Z0-9]*/;
-        var username_val = username.value;
+        var username_val = username.value.replace(/\s/g,"");
         if(username_val == null || username_val == ""){
             // alert("输入不能为空！")
             username_tips.style.background = "red"
@@ -87,8 +84,8 @@ function register_ifyInput(){
         return true;
     }
     /****************************************************************************************/
-    var p = function(){
-        var password_val = password.value;
+    var ifyP = function(){
+        var password_val = password.value.replace(/\s/g,"");
         if(password_val == null || password_val == ""){
             //alert("输入不能为空！")
             password_tips.style.background = "red"
@@ -106,8 +103,8 @@ function register_ifyInput(){
         return true;
     }
     /****************************************************************************************/
-    var rp = function(){
-        var repassword_val = repassword.value;
+    var ifyRP = function(){
+        var repassword_val = repassword.value.replace(/\s/g,"");
         if(repassword_val == null || repassword_val == ""){
             //alert("输入不能为空！")
             repassword_tips.style.background = "red"
@@ -125,10 +122,10 @@ function register_ifyInput(){
         return true;
     }
     /****************************************************************************************/
-    var e = function(){
+    var ifyE = function(){
         // 邮箱正则表达式
         var email_ze = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-        var e_mail_val = e_mail.value;
+        var e_mail_val = e_mail.value.replace(/\s/g,"");
         if(e_mail_val == null || e_mail_val == ""){
             //alert("输入不能为空！")
             e_mail_tips.style.background = "red"
@@ -146,10 +143,10 @@ function register_ifyInput(){
         return true;
     }
     /****************************************************************************************/
-    var pnum = function(){
+    var ifyPNUM = function(){
         // 手机号码正则表达式
         var phonenumber_ze = /^1[345678]\d{9}$/;
-        var phonenumber_val = phonenumber.value;
+        var phonenumber_val = phonenumber.value.replace(/\s/g,"");
         if(phonenumber == null || phonenumber == ""){
             //alert("输入不能为空！")
             phonenumber_tips.style.background = "red"
@@ -167,16 +164,20 @@ function register_ifyInput(){
         return true;
     }
     /****************************************************************************************/
-    var n = n()
-    var u = u()
-    var p = p()
-    var rp = rp()
-    var e = e()
-    var pnum = pnum();
 
-    if(n&&u&&p&&rp&&e&&pnum){
+    var obj = {
+        "ifyName":ifyN,
+        "ifyUser":ifyU,
+        "ifyPasswrod":ifyP,
+        "ifyRepassword":ifyRP,
+        "ifyEmail":ifyE,
+        "ifyPhonenum":ifyPNUM
+    }
+
+    return obj;
+    /*if(n&&u&&p&&rp&&e&&pnum){
         return true
     }else{
         return false;
-    }
+    }*/
 }

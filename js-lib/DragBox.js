@@ -32,7 +32,8 @@ function DragBox(obj){
         '    border: 1px solid #ccc;\n' +
         '    position: absolute;\n' +
         '    top: 20%;\n' +
-        '    left: 40%;';
+        '    left: 40%;'+
+        '       background:white';
 
     topBar.style.cssText = 'width: 100%;\n' +
         '    height: 30px;\n' +
@@ -63,6 +64,7 @@ function DragBox(obj){
     // 1、鼠标在login box 中头部按下的时候，计算鼠标在盒子中的坐标
     // 1.1、给头部注册鼠标按下事件
     topBar.onmousedown = function (e) {
+        document.getElementById("curtian").style.display = "block"
         e = e || event
         // 1.2、计算鼠标在盒子中坐标 = 鼠标在页面中的坐标 - 盒子在页面中的坐标
         var x = getPage(e).pageX - loginBox.offsetLeft;
@@ -104,6 +106,7 @@ function DragBox(obj){
     //当鼠标弹起的时候，移除 move 事件
     document.onmouseup = function () {
         document.onmousemove = null;
+        document.getElementById("curtian").style.display = "none"
     }
 
     document.getElementById(obj.showBox).onclick = function(){

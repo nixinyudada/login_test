@@ -19,12 +19,17 @@ function typing(obj){
         }
 
         // 让 n 增加，来得到打字的效果
-        n = n+1;
+        n = n+obj.wordSpeed;
         console.log(n)
         // 定时器 1毫秒执行一次
         var v = setTimeout(function(){
             writing()
         },obj.speed);
+
+
+
+        box.scrollTop = box.scrollHeight
+
     }
     writing()
 }

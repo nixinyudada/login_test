@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/badapple/style.css">
+  <style>
+    #VideoList{
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 380px;
+      height: 300px;
+      border: 1px solid #cccccc;
+      box-shadow: 0px 0px 10px #ccc;
+      overflow: hidden;
+    }
+    #VideoList2{
+      width: 105%;
+      height: 100%;
+      overflow: auto;
+    }
+    #VideoList ul li{
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      list-style: none;
+    }
+    #VideoList ul li p{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      float: left;
+      margin: 20px;
+      box-shadow: 0px 0px 2px #ccc;
+      text-align: center;
+      line-height: 100px;
+      font-family: "微软雅黑 Light";
+      font-size: 20px;
+
+    }
+    #VideoList ul li p:hover{
+      cursor: pointer;
+      transition: all 0.7s  0.1s;
+      box-shadow: 0px 0px 20px deepskyblue;
+      background: deepskyblue;
+      text-shadow: 0px 0px 10px white;
+      color: white;
+    }
+span{
+  display: none;
+}
+  </style>
+</head>
+<body>
+
+<div id="VideoList">
+  <div id="VideoList2">
+    <ul>
+      <li>
+        <p><span>http://player.bilibili.com/player.html?aid=167919&cid=276833&page=1</span>中文版<span>https://www.bilibili.com/video/av167919/</span></p>
+        <p><span>http://player.bilibili.com/player.html?aid=580312&cid=859132&page=1</span>意呆利版<span>https://www.bilibili.com/video/av580312?zw</span></p>
+        <p><span>http://player.bilibili.com/player.html?aid=3926823&cid=6320291&page=1</span>俄语版<span>https://www.bilibili.com/video/av3926823/</span></p>
+        <p><span>http://player.bilibili.com/player.html?aid=22118703&cid=36573146&page=1</span>日语版<span>https://www.bilibili.com/video/av22118703/?p=1</span></p>
+      </li>
+      <li>
+        <p><span>http://player.bilibili.com/player.html?aid=16256758&cid=26529258&page=1</span>(JAVA)版<span>https://www.bilibili.com/video/av16256758/</span></p>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+
+  <div id="ani">
+
+  </div>
+  <div id="controller">
+    <button id="play" type="button">播放</button> 
+    <button id="pause" type="button" disabled>暂停</button> 
+  </div>
+
+
+
+
+
+
+
+  <!--<div id="loading">
+    <img src="../img/loading.gif" alt="">
+  </div>-->
+  <script src="../js/badAppple/data.js"></script>
+  <script src="../js/badAppple/entry.js"></script>
+<script>
+    window.onload = function(){
+        var pArr = document.getElementsByTagName("p")
+        for(var i=0;i<pArr.length;i++){
+            pArr[i].onclick = function(){
+                clearInterval(timer);
+                music.pause();
+                document.getElementById("controller").innerHTML = "<a href="+this.lastChild.innerHTML+">原链接 >></a>";
+                document.getElementById("ani").innerHTML = `
+                <iframe height="380" width="474" src="`+this.firstChild.innerHTML+`" scrolling="no"
+            border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                `
+            }
+        }
+    }
+</script>
+</body>
+</html>

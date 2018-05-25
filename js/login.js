@@ -1,7 +1,7 @@
 window.onload = function(){
     DragBox({
         "width":500,
-        "height":500,
+        "height":360,
         "title":"欢迎登陆",
         "id":"loginBox",
         "showBox":"login_box"
@@ -34,7 +34,7 @@ window.onload = function(){
             var password_V = obj.pFunc()
             if(password_V){
                 alert("登陆成功！")
-                location.href = "index.html"
+                location.href = "badApple/index.html"
                 // 待传服务端
                 /*var username_val = document.getElementById("username").value;
                 var password_val = document.getElementById("password").value;
@@ -66,7 +66,6 @@ window.onload = function(){
 
 
     }
-
 
 
     document.getElementById("loadDiv").style.display = "none"
